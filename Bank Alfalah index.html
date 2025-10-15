@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Alfalah - Pakistan's Best Bank for Digital Banking (Replica)</title>
+    <!-- Tailwind CSS library ko load karein -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom colors aur font configure karein -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'alfalah-red': '#E4002B', // Bank Alfalah colour
+                        'alfalah-gray': '#4B5563',
+                        'light-bg': '#F9FAFB',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Default font set karein */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header aur Navigation (Yeh sabse upar ka hissa hai) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo aur brand ka naam -->
+                <a href="#" class="flex-shrink-0">
+                    <span class="text-3xl font-bold text-alfalah-red">Bank Alfalah</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-alfalah-gray">
+                    <a href="#" class="hover:text-alfalah-red transition duration-150 ease-in-out py-2 border-b-2 border-transparent hover:border-alfalah-red">Personal Banking</a>
+                    <a href="#" class="hover:text-alfalah-red transition duration-150 ease-in-out py-2 border-b-2 border-transparent hover:border-alfalah-red">Business Banking</a>
+                    <a href="#" class="hover:text-alfalah-red transition duration-150 ease-in-out py-2 border-b-2 border-transparent hover:border-alfalah-red">Islamic Banking</a>
+                    <a href="#" class="hover:text-alfalah-red transition duration-150 ease-in-out py-2 border-b-2 border-transparent hover:border-alfalah-red">Premier Banking</a>
+                    <a href="#" class="hover:text-alfalah-red transition duration-150 ease-in-out py-2 border-b-2 border-transparent hover:border-alfalah-red">About Us</a>
+                </nav>
+
+                <!-- Login aur utility buttons -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <div class="text-sm">
+                        <span class="text-alfalah-gray">Pakistan</span>
+                        <!-- Dropdown ka icon -->
+                        <svg class="w-4 h-4 inline-block ml-1 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <button class="px-4 py-2 text-sm font-semibold rounded-lg text-white bg-alfalah-red hover:bg-red-700 transition duration-150 ease-in-out shadow-md">
+                        Login
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg text-alfalah-gray hover:text-alfalah-red focus:outline-none" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu ke links -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 pb-2">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-sm font-medium">
+                <a href="#" class="block px-3 py-2 rounded-md text-alfalah-gray hover:bg-light-bg">Personal Banking</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-alfalah-gray hover:bg-light-bg">Business Banking</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-alfalah-gray hover:bg-light-bg">Islamic Banking</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-alfalah-gray hover:bg-light-bg">Premier Banking</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-alfalah-gray hover:bg-light-bg">About Us</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-white bg-alfalah-red text-center mt-2">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mukhya Hero Section (Page ka sabse zaroori message) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center bg-light-bg lg:bg-white rounded-xl lg:rounded-none p-6 lg:p-0">
+            <!-- Text Content -->
+            <div class="order-2 lg:order-1">
+                <p class="text-alfalah-red font-semibold mb-2">Pakistan's Best Bank for Digital Banking</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Enjoy <span class="text-alfalah-red">financial freedom</span> with the award-winning Alfa App.
+                </h1>
+                <p class="text-xl text-gray-600 mb-8">
+                    Save and grow your wealth, finance your dreams, and access the country's largest digital network. Choice of Islamic or conventional banking designed around you.
+                </p>
+                <a href="#" class="inline-block px-10 py-4 text-lg font-bold text-white bg-alfalah-red rounded-xl shadow-2xl hover:bg-red-700 transition duration-300 transform hover:scale-105">
+                    Open Account Now
+                </a>
+            </div>
+            <!-- Asli image ke liye path (Placeholder URL ki jagah) -->
+            <div class="order-1 lg:order-2">
+                <img src="/assets/images/digital-banking-banner.webp" alt="Bank Alfalah Digital Banking Banner" class="w-full h-auto rounded-xl shadow-xl border border-gray-100" onerror="this.onerror=null; this.src='https://placehold.co/800x550/f0f0f0/6B7280?text=Digital+Banking+Banner';">
+            </div>
+        </div>
+    </main>
+
+    <!-- Banking Solutions Section (Mukhya services ke cards) -->
+    <section class="bg-light-bg py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Banking Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Solution Card 1: Accounts & Cards -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-alfalah-red mb-4">
+                        <!-- Card Icon (Wallet/Debit Card) -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Accounts & Debit Cards</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Open an account to unlock Pakistan's leading digital banking experience and exclusive features of Alfa and Debit Cards.</p>
+                    <a href="#" class="text-alfalah-red font-semibold text-sm hover:underline">Learn more &rarr;</a>
+                </div>
+
+                <!-- Solution Card 2: Credit Cards -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-alfalah-red mb-4">
+                        <!-- Credit Card Icon -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Credit Cards & Deals</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Break free from financial boundaries. Get the exclusive American Express Card and enjoy the highest discounts and the best deals.</p>
+                    <a href="#" class="text-alfalah-red font-semibold text-sm hover:underline">Learn more &rarr;</a>
+                </div>
+
+                <!-- Solution Card 3: Personal Loan -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-alfalah-red mb-4">
+                        <!-- Loan/Cash Icon -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h2.5M7 15h2m-2 0a3 3 0 003 3h4a3 3 0 003-3v-3a2 2 0 00-2-2h-3.5m-3 0a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Personal Loan</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Need extra funds quickly? Access instant financing solutions with ease and flexibility tailored to your needs.</p>
+                    <a href="#" class="text-alfalah-red font-semibold text-sm hover:underline">Apply Now &rarr;</a>
+                </div>
+
+                <!-- Solution Card 4: Car Finance -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-alfalah-red mb-4">
+                        <!-- Car Icon -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M17 14v-2"></path><path stroke-linecap="round" stroke-linejoin="round" d="M7 14v-2"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 5h7a2 2 0 012 2v3m-3 0h-3a2 2 0 00-2 2v3m-3 0h-3a2 2 0 00-2 2v3m-3 0h-3a2 2 0 01-2-2V7a2 2 0 012-2h7"></path></svg></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Car Finance</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Book your dream car on our flexible Buy-Now, Pay-Later facility with quick processing and attractive rates.</p>
+                    <a href="#" class="text-alfalah-red font-semibold text-sm hover:underline">Learn more &rarr;</a>
+                </div>
+
+                <!-- Solution Card 5: Wealth Management -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-alfalah-red mb-4">
+                        <!-- Chart/Growth Icon -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13m-6 2l-6 3m-3-3v3m3-3v3"></path><path stroke-linecap="round" stroke-linejoin="round" d="M13 14h.01M17 18h.01M10 18h.01M7 18h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Wealth Management</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Invest in funds, securities, T-Bills & Sukuk directly linked to your account and see all your investments in one place.</p>
+                    <a href="#" class="text-alfalah-red font-semibold text-sm hover:underline">Invest Now &rarr;</a>
+                </div>
+
+                <!-- Solution Card 6: Roshan Digital Account -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-alfalah-red mb-4">
+                        <!-- Globe Icon -->
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Roshan Digital Account</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Overseas Pakistanis, now open FCY or PKR account, earn significant returns & consume your funds for your loved ones back home.</p>
+                    <a href="#" class="text-alfalah-red font-semibold text-sm hover:underline">Open RDA &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Alfa App / Digital Banking Banner Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="bg-alfalah-red text-white rounded-3xl p-10 md:p-16 flex flex-col lg:flex-row items-center justify-between shadow-2xl">
+            <div class="max-w-xl mb-8 lg:mb-0">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Bank Smarter with the Alfa App</h2>
+                <p class="text-xl font-light mb-6">Your all-in-one digital banking lifestyle app. Make transactions, investments, or apply for cards anytime, anywhere.</p>
+                <div class="flex space-x-4">
+                    <!-- App Store link buttons (Asli images ki jagah Tailwind se styled links) -->
+                    <a href="#" class="inline-flex items-center justify-center h-12 px-5 py-3 text-sm font-semibold text-gray-900 bg-white rounded-lg shadow-md hover:bg-gray-100 transition">
+                        <!-- Apple icon for store -->
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18V6M4 14l8 4 8-4M4 10l8-4 8 4"></path></svg>
+                        App Store
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center h-12 px-5 py-3 text-sm font-semibold text-gray-900 bg-white rounded-lg shadow-md hover:bg-gray-100 transition">
+                        <!-- Google Play icon -->
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v-1a4 4 0 014-4h8a4 4 0 014 4v1M4 16h4m4 0h4m4 0h-4M12 11V4"></path></svg>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+            <!-- Mobile Phone Mockup Placeholder -->
+            <div class="relative w-48 h-96 bg-gray-900 rounded-[2.5rem] shadow-[0_0_0_4px_#333,0_0_10px_rgba(0,0,0,0.5)] flex items-center justify-center">
+                <div class="absolute w-1 h-8 bg-gray-700 rounded-full top-0 left-1/2 transform -translate-x-1/2"></div>
+                <div class="w-[90%] h-[90%] bg-white rounded-2xl flex items-center justify-center text-center text-gray-800 text-sm p-4">
+                    Alfa App Screen
+                    <!-- Is area mein asal mein app ka screenshot aayega -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Sabse neeche ka hissa) -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-sm">
+                <!-- Group 1: About links -->
+                <div>
+                    <h4 class="font-bold mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-alfalah-red">About us</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Our Leadership</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Newsroom</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Sustainability</a></li>
+                    </ul>
+                </div>
+                <!-- Group 2: Quick Links -->
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-alfalah-red">Schedule of Charges</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Key Fact Statements</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Terms and Conditions</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Rate Sheet</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Fraud Risk Awareness</a></li>
+                    </ul>
+                </div>
+                <!-- Group 3: Services -->
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-alfalah-red">Service Requests</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">TAT</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Remittance Tracker</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Careers</a></li>
+                        <li><a href="#" class="hover:text-alfalah-red">Women Services</a></li>
+                    </ul>
+                </div>
+                <!-- Group 4: Contact Information -->
+                <div class="col-span-2 md:col-span-1 lg:col-span-3">
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <p class="text-gray-400">Head Office, B.A. Building, I.I. Chundrigar Road, Karachi-74000, Pakistan</p>
+                    <p class="mt-4 text-lg font-bold text-alfalah-red">+92 (21) 111 225 111</p>
+                    <p class="text-gray-400">contactus@bankalfalah.com</p>
+                </div>
+            </div>
+
+            <!-- Copyright aur social media links -->
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2025 Bank Alfalah, All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">&#x25CF; Facebook</a>
+                    <a href="#" class="hover:text-white transition">&#x25CF; Twitter</a>
+                    <a href="#" class="hover:text-white transition">&#x25CF; LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+    <style>
+        /* Define piece colors */
+        .piece-light { color: #f7f7f7; }
+        .piece-dark { color: #2c3e50; }
+
+        /* Define square colors, matching the image */
+        .dark { background-color: #3b8e4e; } /* Green */
+        .light { background-color: #f7f7f7; } /* Off-White */
+
+        /* Center the board on the page */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Chessboard container */
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            width: 80vw;
+            height: 80vw;
+            max-width: 600px;
+            max-height: 600px;
+            border: 6px solid #555;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box; /* Include border in size calculation */
+        }
+
+        /* Square styling */
+        .square {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Simple font size based on percentage of container */
+            font-size: 5.5vw;
+            line-height: 1;
+            user-select: none;
+            box-sizing: border-box;
+        }
+
+        /* Ensure piece size scales nicely on smaller screens */
+        @media (max-width: 600px) {
+             .square { font-size: 8vw; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="chessboard">
+        <!-- Row 8 (Black Pieces, Dark is the first square) -->
+        <div class="square dark"><span class="piece-light">♜</span></div>
+        <div class="square light"><span class="piece-light">♞</span></div>
+        <div class="square dark"><span class="piece-light">♝</span></div>
+        <div class="square light"><span class="piece-light">♛</span></div>
+        <div class="square dark"><span class="piece-light">♚</span></div>
+        <div class="square light"><span class="piece-light">♝</span></div>
+        <div class="square dark"><span class="piece-light">♞</span></div>
+        <div class="square light"><span class="piece-light">♜</span></div>
+
+        <!-- Row 7 (Black Pawns, Light is the first square) -->
+        <div class="square light"><span class="piece-light">♟</span></div>
+        <div class="square dark"><span class="piece-light">♟</span></div>
+        <div class="square light"><span class="piece-light">♟</span></div>
+        <div class="square dark"><span class="piece-light">♟</span></div>
+        <div class="square light"><span class="piece-light">♟</span></div>
+        <div class="square dark"><span class="piece-light">♟</span></div>
+        <div class="square light"><span class="piece-light">♟</span></div>
+        <div class="square dark"><span class="piece-light">♟</span></div>
+
+        <!-- Row 6 (Empty, Dark is the first square) -->
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+
+        <!-- Row 5 (Empty, Light is the first square) -->
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+
+        <!-- Row 4 (Empty, Dark is the first square) -->
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+
+        <!-- Row 3 (Empty, Light is the first square) -->
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+        <div class="square light"></div>
+        <div class="square dark"></div>
+
+        <!-- Row 2 (White Pawns, Dark is the first square) -->
+        <div class="square dark"><span class="piece-dark">♙</span></div>
+        <div class="square light"><span class="piece-dark">♙</span></div>
+        <div class="square dark"><span class="piece-dark">♙</span></div>
+        <div class="square light"><span class="piece-dark">♙</span></div>
+        <div class="square dark"><span class="piece-dark">♙</span></div>
+        <div class="square light"><span class="piece-dark">♙</span></div>
+        <div class="square dark"><span class="piece-dark">♙</span></div>
+        <div class="square light"><span class="piece-dark">♙</span></div>
+
+        <!-- Row 1 (White Pieces, Light is the first square) -->
+        <div class="square light"><span class="piece-dark">♖</span></div>
+        <div class="square dark"><span class="piece-dark">♘</span></div>
+        <div class="square light"><span class="piece-dark">♗</span></div>
+        <div class="square dark"><span class="piece-dark">♕</span></div>
+        <div class="square light"><span class="piece-dark">♔</span></div>
+        <div class="square dark"><span class="piece-dark">♗</span></div>
+        <div class="square light"><span class="piece-dark">♘</span></div>
+        <div class="square dark"><span class="piece-dark">♖</span></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 06 - Form and Marksheet</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better readability and a clean look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            padding: 2rem 0;
+        }
+        .form-label {
+            width: 35%; /* Fixed width for labels on desktop */
+            min-width: 120px;
+            font-weight: 500;
+            color: #e9d5ff; /* Light purple text */
+            text-align: right;
+        }
+        .form-input-container {
+            width: 65%;
+        }
+        input[type="text"], input[type="email"], input[type="number"], select {
+            border: 1px solid #a78bfa;
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #ffffff;
+            color: #1f2937;
+            width: 100%;
+        }
+
+        /* Marksheet Table Styling */
+        .marksheet-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.8rem;
+        }
+        .marksheet-table th, .marksheet-table td {
+            border: 1px solid #10b981; /* Green border */
+            padding: 0.5rem;
+            text-align: center;
+        }
+        .marksheet-table th {
+            font-weight: 600;
+            background-color: #059669; /* Darker green for headers */
+            color: white;
+            padding: 0.75rem 0.25rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto space-y-12">
+
+        <!-- Section 1: Application Form -->
+        <div class="bg-purple-800 p-6 md:p-10 rounded-xl shadow-2xl">
+            <h2 class="text-3xl font-extrabold text-white mb-8 text-center border-b pb-3 border-purple-500">
+                Application & Registration Form
+            </h2>
+            <form class="space-y-4 text-sm text-purple-200">
+
+                <!-- Helper function for responsive form rows -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- First Name -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <label for="first-name" class="form-label pt-1 pb-1 md:pb-0 md:pt-0">FIRST NAME:</label>
+                        <div class="form-input-container">
+                            <input type="text" id="first-name" placeholder="" maxlength="30" pattern="[a-zA-Z\s]+" title="(max 30 characters a-z and A-Z)" required>
+                        </div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <label for="last-name" class="form-label pt-1 pb-1 md:pb-0 md:pt-0">LAST NAME:</label>
+                        <div class="form-input-container">
+                            <input type="text" id="last-name" placeholder="" maxlength="30" pattern="[a-zA-Z\s]+" title="(max 30 characters a-z and A-Z)" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <label class="form-label pt-1 pb-1 md:pb-0 md:pt-0">DATE OF BIRTH:</label>
+                    <div class="form-input-container flex space-x-2">
+                        <select class="w-1/3" required>
+                            <option value="">Day</option>
+                            <!-- Days 1-31 -->
+                            <script>for(let i=1; i<=31; i++) document.write(`<option value="${i}">${i}</option>`)</script>
+                        </select>
+                        <select class="w-1/3" required>
+                            <option value="">Month</option>
+                            <option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option>
+                            <option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option>
+                        </select>
+                        <select class="w-1/3" required>
+                            <option value="">Year</option>
+                            <!-- Years 2005-2000 -->
+                            <script>for(let i=2005; i>=1950; i--) document.write(`<option value="${i}">${i}</option>`)</script>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Email ID -->
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <label for="email" class="form-label pt-1 pb-1 md:pb-0 md:pt-0">EMAIL ID:</label>
+                    <div class="form-input-container">
+                        <input type="email" id="email" placeholder="" maxlength="30" title="(max 30 characters a-z and A-Z)" required>
+                    </div>
+                </div>
+
+                <!-- Phone Number & Gender -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Phone Number -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <label for="phone" class="form-label pt-1 pb-1 md:pb-0 md:pt-0">PHONE NUMBER:</label>
+                        <div class="form-input-container">
+                            <input type="number" id="phone" placeholder="" pattern="\d{10}" title="(10 digit number)" required>
+                        </div>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <label class="form-label pt-1 pb-1 md:pb-0 md:pt-0">GENDER:</label>
+                        <div class="form-input-container flex space-x-4 pt-1">
+                            <label><input type="radio" name="gender" value="male" class="mr-1"> Male</label>
+                            <label><input type="radio" name="gender" value="female" class="mr-1"> Female</label>
+                            <label><input type="radio" name="gender" value="other" class="mr-1"> Others</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <label for="address" class="form-label pt-1 pb-1 md:pb-0 md:pt-0">ADDRESS:</label>
+                    <div class="form-input-container">
+                        <input type="text" id="address" placeholder="" required>
+                    </div>
+                </div>
+
+                <!-- City, Pin Code, State -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- City -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <label for="city" class="form-label pt-1 pb-1 md:pb-0 md:pt-0 md:text-left md:w-auto">CITY:</label>
+                        <div class="form-input-container md:w-full md:ml-2">
+                            <input type="text" id="city" placeholder="" maxlength="30" pattern="[a-zA-Z\s]+" title="(max 30 characters a-z and A-Z)" required>
+                        </div>
+                    </div>
+                    <!-- Pin Code -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <label for="pin-code" class="form-label pt-1 pb-1 md:pb-0 md:pt-0 md:text-left md:w-auto">PIN CODE:</label>
+                        <div class="form-input-container md:w-full md:ml-2">
+                            <input type="number" id="pin-code" placeholder="" pattern="\d{6}" title="(6 digit number)" required>
+                        </div>
+                    </div>
+                    <!-- State -->
+                    <div class="flex flex-col md:flex-row items-start md:items-center">
+                        <label for="state" class="form-label pt-1 pb-1 md:pb-0 md:pt-0 md:text-left md:w-auto">STATE:</label>
+                        <div class="form-input-container md:w-full md:ml-2">
+                            <input type="text" id="state" placeholder="" maxlength="30" pattern="[a-zA-Z\s]+" title="(max 30 characters a-z and A-Z)" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country -->
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <label for="country" class="form-label pt-1 pb-1 md:pb-0 md:pt-0">COUNTRY:</label>
+                    <div class="form-input-container">
+                        <select id="country" required>
+                            <option value="india" selected>India</option>
+                            <option value="usa">USA</option>
+                            <option value="uk">UK</option>
+                            <option value="canada">Canada</option>
+                            <option value="other">Others</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Hobbies -->
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <label class="form-label pt-1 pb-1 md:pb-0 md:pt-0">HOBBIES:</label>
+                    <div class="form-input-container flex flex-wrap gap-4 pt-1">
+                        <label><input type="checkbox" name="hobbies" value="drawing" class="mr-1"> Drawing</label>
+                        <label><input type="checkbox" name="hobbies" value="singing" class="mr-1"> Singing</label>
+                        <label><input type="checkbox" name="hobbies" value="dancing" class="mr-1"> Dancing</label>
+                        <label><input type="checkbox" name="hobbies" value="sketching" class="mr-1"> Sketching</label>
+                        <label><input type="checkbox" name="hobbies" value="others" class="mr-1"> Others</label>
+                    </div>
+                </div>
+
+                <!-- Qualification Table -->
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <label class="form-label pt-1 pb-1 md:pb-0 md:pt-0">QUALIFICATION:</label>
+                    <div class="form-input-container w-full pt-1">
+                        <table class="w-full text-xs bg-purple-900 rounded-lg overflow-hidden border border-purple-500">
+                            <thead>
+                                <tr class="bg-purple-700 text-white">
+                                    <th class="p-2 border border-purple-500">Sl.No.</th>
+                                    <th class="p-2 border border-purple-500">Examination</th>
+                                    <th class="p-2 border border-purple-500">Board</th>
+                                    <th class="p-2 border border-purple-500">Percentage</th>
+                                    <th class="p-2 border border-purple-500">Year of Passing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1 -->
+                                <tr>
+                                    <td class="p-2 border border-purple-500 text-center">1.</td>
+                                    <td class="p-2 border border-purple-500">Class X</td>
+                                    <td class="p-2 border border-purple-500"><input type="text" class="h-6 p-1 text-xs" title="(10 char max)"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" step="0.01" class="h-6 p-1 text-xs" title="(upto 2 decimal)"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" class="h-6 p-1 text-xs"></td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr>
+                                    <td class="p-2 border border-purple-500 text-center">2.</td>
+                                    <td class="p-2 border border-purple-500">Class XII</td>
+                                    <td class="p-2 border border-purple-500"><input type="text" class="h-6 p-1 text-xs"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" step="0.01" class="h-6 p-1 text-xs"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" class="h-6 p-1 text-xs"></td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr>
+                                    <td class="p-2 border border-purple-500 text-center">3.</td>
+                                    <td class="p-2 border border-purple-500">Graduation</td>
+                                    <td class="p-2 border border-purple-500"><input type="text" class="h-6 p-1 text-xs"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" step="0.01" class="h-6 p-1 text-xs"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" class="h-6 p-1 text-xs"></td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr>
+                                    <td class="p-2 border border-purple-500 text-center">4.</td>
+                                    <td class="p-2 border border-purple-500">Masters</td>
+                                    <td class="p-2 border border-purple-500"><input type="text" class="h-6 p-1 text-xs"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" step="0.01" class="h-6 p-1 text-xs"></td>
+                                    <td class="p-2 border border-purple-500"><input type="number" class="h-6 p-1 text-xs"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Courses Applied For -->
+                <div class="flex flex-col md:flex-row items-start md:items-center pt-2">
+                    <label class="form-label pt-1 pb-1 md:pb-0 md:pt-0">COURSES APPLIED FOR:</label>
+                    <div class="form-input-container flex flex-wrap gap-4 pt-1">
+                        <label><input type="radio" name="course" value="bca" class="mr-1"> BCA</label>
+                        <label><input type="radio" name="course" value="bcom" class="mr-1"> B.Com</label>
+                        <label><input type="radio" name="course" value="bba" class="mr-1"> BBA</label>
+                        <label><input type="radio" name="course" value="ba" class="mr-1"> BA</label>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-center space-x-6 pt-6">
+                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-bold py-2 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                        Submit
+                    </button>
+                    <button type="reset" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                        Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Section 2: Complex Marksheet Table -->
+        <div class="bg-green-700 p-6 md:p-10 rounded-xl shadow-2xl overflow-x-auto">
+            <h2 class="text-3xl font-extrabold text-white mb-8 text-center border-b pb-3 border-green-400">
+                MarkSheet of 2077
+            </h2>
+            <table class="marksheet-table w-full text-white">
+                <thead>
+                    <tr>
+                        <th rowspan="3" class="w-12">S.No.</th>
+                        <th rowspan="3" class="w-24">Name</th>
+                        <th colspan="6">Marks</th>
+                        <th rowspan="3" class="w-16">Total</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Science</th>
+                        <th colspan="2">Social</th>
+                        <th colspan="2">Computer</th>
+                    </tr>
+                    <tr>
+                        <th>Internal</th>
+                        <th>Final</th>
+                        <th>Internal</th>
+                        <th>Final</th>
+                        <th>Internal</th>
+                        <th>Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student Row 1 -->
+                    <tr>
+                        <td>1.</td>
+                        <td>Bikash</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>50</td>
+                    </tr>
+                    <!-- Student Row 2 -->
+                    <tr>
+                        <td>2.</td>
+                        <td>Bikesh</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>50</td>
+                    </tr>
+                    <!-- Student Row 3 -->
+                    <tr>
+                        <td>3.</td>
+                        <td>Avinash</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>50</td>
+                    </tr>
+                    <!-- Student Row 4 -->
+                    <tr>
+                        <td>4.</td>
+                        <td>Ram</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>50</td>
+                    </tr>
+                    <!-- Student Row 5 -->
+                    <tr>
+                        <td>5.</td>
+                        <td>Abdul</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>43</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="bg-green-600 font-bold">
+                        <td colspan="7" class="text-right pr-4">Total</td>
+                        <td colspan="2">250</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p class="text-center text-xs text-green-300 mt-4">
+                Coded By: (:-Mr. Mack-:)
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
